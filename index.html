@@ -866,8 +866,16 @@ window.renderDelivery = () => {
 // ══════════════════════════════════════════════════════
 // INIT — Start real-time listeners
 // ══════════════════════════════════════════════════════
-p_date.value=today(); ob_due.value=today(); inv_date.value=today();
-del_date.value = today();
+  const p_date    = document.getElementById("p_date");
+const ob_due    = document.getElementById("ob_due");
+const inv_date  = document.getElementById("inv_date");
+const del_date  = document.getElementById("del_date");
+const del_fagent = document.getElementById("del_fagent");
+const ef_shift   = document.getElementById("ef_shift");
+if (p_date)   p_date.value   = today();
+if (ob_due)   ob_due.value   = today();
+if (inv_date) inv_date.value = today();
+if (del_date) del_date.value = today();
 
 let loadCount=0;
 function checkLoaded(){ loadCount++; if(loadCount>=6) document.getElementById("loading").style.display="none"; }

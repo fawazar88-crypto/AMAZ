@@ -780,8 +780,19 @@ window.saveDelivery = async () => {
   del_orders.value=""; del_amount.value=""; del_fee.value=""; del_notes.value=""; showToast("✅ تم تسجيل الطلبات");
 };
 window.deleteDelivery = async id => { if(!confirm("حذف السجل؟"))return; await fbDelete("deliveries",id); showToast("🗑️ تم الحذف"); };
-window.openDelFor = id => { openM("m-delivery"); del_date.value=today(); setTimeout(()=>{del_agent.value=id;},50); };
+window.openDelFor = id => {
+  openM("m-delivery");
 
+  const el_date = document.getElementById("el_date");
+
+  if (el_date) {
+    el_date.value = today();
+  }
+
+  setTimeout(() => {
+    del_agent.value = id;
+  }, 50);
+};
 window.renderDelivery = () => {
   populateAgentSelect();
   const todayStr=today(), mon=todayStr.substring(0,7);

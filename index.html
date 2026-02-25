@@ -867,7 +867,7 @@ window.renderDelivery = () => {
 // INIT — Start real-time listeners
 // ══════════════════════════════════════════════════════
 p_date.value=today(); ob_due.value=today(); inv_date.value=today();
-del_date.value=today(); del_fdate.value=today();
+del_date.value = today();
 
 let loadCount=0;
 function checkLoaded(){ loadCount++; if(loadCount>=6) document.getElementById("loading").style.display="none"; }
